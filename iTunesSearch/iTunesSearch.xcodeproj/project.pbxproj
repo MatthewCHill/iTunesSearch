@@ -12,6 +12,7 @@
 		34C3B21D29B248F000B1B295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C3B21B29B248F000B1B295 /* Main.storyboard */; };
 		34C3B21F29B248F400B1B295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C3B21E29B248F400B1B295 /* Assets.xcassets */; };
 		34C3B22229B248F400B1B295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C3B22029B248F400B1B295 /* LaunchScreen.storyboard */; };
+		34C3B24F29B29C4000B1B295 /* AritistAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B24E29B29C4000B1B295 /* AritistAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		34C3B21E29B248F400B1B295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34C3B22129B248F400B1B295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34C3B22329B248F400B1B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34C3B24E29B29C4000B1B295 /* AritistAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AritistAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,11 @@
 		34C3B21429B248F000B1B295 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				34C3B22D29B24FFE00B1B295 /* Helper&Extensions */,
+				34C3B22C29B24FF000B1B295 /* Networking */,
+				34C3B22B29B24FE600B1B295 /* Model */,
+				34C3B22A29B24F9C00B1B295 /* Storyboard */,
 				34C3B22929B2491800B1B295 /* SupportingFiles */,
-				34C3B21B29B248F000B1B295 /* Main.storyboard */,
-				34C3B22029B248F400B1B295 /* LaunchScreen.storyboard */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -70,6 +74,37 @@
 				34C3B22329B248F400B1B295 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		34C3B22A29B24F9C00B1B295 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				34C3B21B29B248F000B1B295 /* Main.storyboard */,
+				34C3B22029B248F400B1B295 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		34C3B22B29B24FE600B1B295 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34C3B24E29B29C4000B1B295 /* AritistAlbum.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34C3B22C29B24FF000B1B295 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		34C3B22D29B24FFE00B1B295 /* Helper&Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Helper&Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C3B24F29B29C4000B1B295 /* AritistAlbum.swift in Sources */,
 				34C3B21629B248F000B1B295 /* AppDelegate.swift in Sources */,
 				34C3B21829B248F000B1B295 /* SceneDelegate.swift in Sources */,
 			);
