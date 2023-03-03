@@ -24,7 +24,7 @@ class ArtistAlbumViewController: UIViewController {
     
     // MARK: - Properties
     var topLevelAlbumDict: TopLevelResults?
-    var albums: [Albums] = []
+    var albums: [Albums]?
     
     /*
     // MARK: - Navigation
@@ -42,13 +42,13 @@ class ArtistAlbumViewController: UIViewController {
 
 extension ArtistAlbumViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albums.count
+        return albums?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as? AlbumTableViewCell else { return UITableViewCell() }
         
-        let album = albums[indexPath.row]
+        guard let album = albums?[indexPath.row] else { return UITableViewCell()}
         cell.fetchArtistAlbums(forArtist: album)
         
         return cell
@@ -65,7 +65,7 @@ extension ArtistAlbumViewController: UISearchBarDelegate {
                 
             case .success(let topLevel):
                 self?.topLevelAlbumDict = topLevel
-                self?.albums.append(contentsOf: topLevel.results)
+                self?.albums = topLevel.results
                 DispatchQueue.main.async {
                     self?.albumListTableView.reloadData()
                 }
