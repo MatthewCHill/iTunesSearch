@@ -46,4 +46,27 @@ class NetworkingService {
             }
         }.resume()
     }
+    
+    static func fetchAlbumArt(forAlbum album: Albums, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        
+        guard let finalURL = URL(string: album.albumArt) else {completion(.failure(.invalidURL)); return}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+            }
+            
+            guard let data = data else {completion(.failure(.noData)); return}
+            guard let image = UIImage(data: data) else {completion(.failure(.unableToDecode)); return}
+            completion(.success(image))
+        }.resume()
+        
+    }
 }
