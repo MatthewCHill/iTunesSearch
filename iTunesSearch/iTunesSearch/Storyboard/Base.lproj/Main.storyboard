@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Artist Album View Controller-->
         <scene sceneID="rS5-1w-dm2">
             <objects>
-                <viewController id="3vT-i1-pcg" sceneMemberID="viewController">
+                <viewController id="3vT-i1-pcg" customClass="ArtistAlbumViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MXF-2w-qMh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="125" width="393" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="albumCell" id="FKd-9L-clc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="albumCell" id="FKd-9L-clc" customClass="AlbumTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="122.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FKd-9L-clc" id="eWW-k0-sEM">
@@ -66,6 +66,11 @@
                                                 <constraint firstItem="Uwg-ij-z9f" firstAttribute="leading" secondItem="eWW-k0-sEM" secondAttribute="leadingMargin" id="sSK-uO-s9b"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumArtImageView" destination="CLb-nB-okr" id="BWs-mq-cgc"/>
+                                            <outlet property="albumNameLabel" destination="QSS-Wg-cP3" id="xW0-xo-NXl"/>
+                                            <outlet property="trackCountLabel" destination="gaa-z0-Bl6" id="49t-yW-Y8T"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -82,6 +87,10 @@
                             <constraint firstItem="SOO-PV-rdJ" firstAttribute="trailing" secondItem="1zN-Oy-d5e" secondAttribute="trailing" id="jiR-2S-cv8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumListTableView" destination="mGV-YZ-VHs" id="l6M-wH-NbP"/>
+                        <outlet property="artistSearchBar" destination="SOO-PV-rdJ" id="scO-JN-wrI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqr-ad-e0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
