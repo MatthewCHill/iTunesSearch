@@ -13,6 +13,9 @@
 		34C3B21F29B248F400B1B295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C3B21E29B248F400B1B295 /* Assets.xcassets */; };
 		34C3B22229B248F400B1B295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C3B22029B248F400B1B295 /* LaunchScreen.storyboard */; };
 		34C3B24F29B29C4000B1B295 /* AritistAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B24E29B29C4000B1B295 /* AritistAlbum.swift */; };
+		34C3B25129B29EA400B1B295 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25029B29EA400B1B295 /* NetworkError.swift */; };
+		34C3B25329B2A14600B1B295 /* NetwrokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25229B2A14600B1B295 /* NetwrokService.swift */; };
+		34C3B25529B2A18F00B1B295 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25429B2A18F00B1B295 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		34C3B22129B248F400B1B295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34C3B22329B248F400B1B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C3B24E29B29C4000B1B295 /* AritistAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AritistAlbum.swift; sourceTree = "<group>"; };
+		34C3B25029B29EA400B1B295 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		34C3B25229B2A14600B1B295 /* NetwrokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokService.swift; sourceTree = "<group>"; };
+		34C3B25429B2A18F00B1B295 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		34C3B22C29B24FF000B1B295 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				34C3B25229B2A14600B1B295 /* NetwrokService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -103,6 +110,8 @@
 		34C3B22D29B24FFE00B1B295 /* Helper&Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34C3B25029B29EA400B1B295 /* NetworkError.swift */,
+				34C3B25429B2A18F00B1B295 /* Constants.swift */,
 			);
 			path = "Helper&Extensions";
 			sourceTree = "<group>";
@@ -179,8 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C3B24F29B29C4000B1B295 /* AritistAlbum.swift in Sources */,
+				34C3B25129B29EA400B1B295 /* NetworkError.swift in Sources */,
+				34C3B25329B2A14600B1B295 /* NetwrokService.swift in Sources */,
 				34C3B21629B248F000B1B295 /* AppDelegate.swift in Sources */,
 				34C3B21829B248F000B1B295 /* SceneDelegate.swift in Sources */,
+				34C3B25529B2A18F00B1B295 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
