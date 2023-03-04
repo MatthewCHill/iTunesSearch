@@ -16,7 +16,7 @@ class NetworkingService {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         urlComponents?.path.append(contentsOf: Constants.ItunesURL.searchPath)
         
-        let albumQuery = URLQueryItem(name: Constants.QueryItems.queryAlbumKey, value: Constants.QueryItems.queryAlbumValue)
+        let albumQuery = URLQueryItem(name: Constants.QueryItems.queryEntityKey, value: Constants.QueryItems.queryEntityAlbumValue)
         let limitQuery = URLQueryItem(name: Constants.QueryItems.queryLimitKey, value: Constants.QueryItems.queryLimitValue)
         let artistQuery = URLQueryItem(name: Constants.QueryItems.queryArtistKey, value: search)
         urlComponents?.queryItems = [albumQuery, limitQuery, artistQuery]
