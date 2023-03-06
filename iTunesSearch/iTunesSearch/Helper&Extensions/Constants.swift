@@ -19,7 +19,9 @@ struct Constants {
     struct QueryItems {
         static let queryEntityKey = "entity"
         static let queryEntityAlbumValue = "album"
-        static let queryEntityAlbumDetailValue = "song&id"
+        static let queryEntitySongValue = "song"
+        
+        static let queryIdKey = "id"
         
         static let queryLimitKey = "limit"
         static let queryLimitValue = "25"

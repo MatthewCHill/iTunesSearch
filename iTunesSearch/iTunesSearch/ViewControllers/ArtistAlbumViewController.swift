@@ -8,7 +8,7 @@
 import UIKit
 
 class ArtistAlbumViewController: UIViewController {
-
+    
     // MARK: - Outlets
     
     @IBOutlet weak var artistSearchBar: UISearchBar!
@@ -26,16 +26,17 @@ class ArtistAlbumViewController: UIViewController {
     var topLevelAlbumDict: TopLevelResults?
     var albums: [Albums]?
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toAlbumDetail" {
+            guard let index = albumListTableView.indexPathForSelectedRow,
+                  let destinationVC = segue.destination as? AlbumDetailViewController,
+                  let albumToSend = albums?[index.row] else { return }
+            destinationVC.albums = albumToSend
+        }
     }
-    */
-
 }
 
 // MARK: - Extensions

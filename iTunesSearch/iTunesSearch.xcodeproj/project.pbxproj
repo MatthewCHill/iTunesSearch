@@ -19,6 +19,7 @@
 		34C3B25B29B2AD4300B1B295 /* ArtistAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25A29B2AD4300B1B295 /* ArtistAlbumViewController.swift */; };
 		34C3B25D29B2ADCD00B1B295 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25C29B2ADCD00B1B295 /* AlbumTableViewCell.swift */; };
 		34C3B25F29B2CCFC00B1B295 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B25E29B2CCFC00B1B295 /* Album.swift */; };
+		34C3B26129B2DD3900B1B295 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3B26029B2DD3900B1B295 /* AlbumDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		34C3B25A29B2AD4300B1B295 /* ArtistAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumViewController.swift; sourceTree = "<group>"; };
 		34C3B25C29B2ADCD00B1B295 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		34C3B25E29B2CCFC00B1B295 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		34C3B26029B2DD3900B1B295 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				34C3B25A29B2AD4300B1B295 /* ArtistAlbumViewController.swift */,
+				34C3B26029B2DD3900B1B295 /* AlbumDetailViewController.swift */,
 				34C3B25929B2AD2D00B1B295 /* CustomViews */,
 			);
 			path = ViewControllers;
@@ -219,6 +222,7 @@
 				34C3B21829B248F000B1B295 /* SceneDelegate.swift in Sources */,
 				34C3B25F29B2CCFC00B1B295 /* Album.swift in Sources */,
 				34C3B25529B2A18F00B1B295 /* Constants.swift in Sources */,
+				34C3B26129B2DD3900B1B295 /* AlbumDetailViewController.swift in Sources */,
 				34C3B25B29B2AD4300B1B295 /* ArtistAlbumViewController.swift in Sources */,
 				34C3B25D29B2ADCD00B1B295 /* AlbumTableViewCell.swift in Sources */,
 			);

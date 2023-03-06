@@ -69,4 +69,65 @@ class NetworkingService {
         }.resume()
         
     }
+    
+    static func fetchAlbumDetails(forAlbum album: Albums, completion: @escaping (Result<TopLevelAlbumDetail, NetworkError>) -> Void) {
+        //https://itunes.apple.com/lookup?entity=song&id=493465268
+        guard let baseURL = URL(string: Constants.ItunesURL.baseURL) else { completion(.failure(.invalidURL)); return }
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.path.append(contentsOf: Constants.ItunesURL.lookupPath)
+        
+        let entityQuery = URLQueryItem(name: Constants.QueryItems.queryEntityKey, value: Constants.QueryItems.queryEntitySongValue)
+        let idQuery = URLQueryItem(name: Constants.QueryItems.queryIdKey, value: String(album.albumID))
+        urlComponents?.queryItems = [entityQuery, idQuery]
+        
+        guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)); return}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { data , response , error in
+            
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+            }
+            
+            guard let data = data else {completion(.failure(.noData)); return}
+            
+            do {
+                let topLevel = try JSONDecoder().decode(TopLevelAlbumDetail.self, from: data)
+                completion(.success(topLevel))
+            } catch {
+                completion(.failure(.unableToDecode))
+                return
+            }
+        }.resume()
+    }
+    
+    
+    static func fetchAlbumDetailArt(forAlbum album: Albums, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        
+        guard let finalURL = URL(string: album.albumArt) else {completion(.failure(.invalidURL)); return}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+            }
+            
+            guard let data = data else {completion(.failure(.noData)); return}
+            guard let image = UIImage(data: data) else {completion(.failure(.unableToDecode)); return}
+            completion(.success(image))
+        }.resume()
+        
+    }
+    
 }

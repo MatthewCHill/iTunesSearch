@@ -18,15 +18,21 @@ struct TopLevelAlbumDetail: Decodable {
 struct AlbumDetail: Decodable {
     private enum CodingKeys: String, CodingKey {
         case albumID = "collectionId"
-        case albumName = "collectionName"
-        case albumCoverArt = "artworkUrl100"
         case trackName
         case trackTime = "trackTimeMillis"
     }
     
-    let albumID: Int
-    let albumName: String
-    let albumCoverArt: String
-    let trackName: String
-    let trackTime: Int
+    let albumID: Int?
+    let trackName: String?
+    let trackTime: Int?
+}
+
+extension AlbumDetail {
+    
+    init(from decoder: Decoder) throws {
+        let container = try? decoder.container(keyedBy: CodingKeys.self)
+        self.albumID = try? container?.decode(Int.self, forKey: .albumID)
+        self.trackName = try? container?.decode(String.self, forKey: .trackName)
+        self.trackTime = try? container?.decode(Int.self, forKey: .trackTime)
+    }
 }

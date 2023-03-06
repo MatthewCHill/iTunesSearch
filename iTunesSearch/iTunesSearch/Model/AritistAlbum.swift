@@ -18,11 +18,13 @@ struct Albums: Decodable {
     private enum CodingKeys: String, CodingKey {
         case albumID = "collectionId"
         case albumName = "collectionName"
-        case trackCount
         case albumArt = "artworkUrl100"
+        case trackCount
     }
+    
     let albumID: Int
     let albumName: String
-    let trackCount: Int
     let albumArt: String
+    let trackCount: Int
 }
+
